@@ -1,0 +1,303 @@
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║              FINANCIAL OPERATIONS ANALYTICS - SUMMARY REPORT             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+--------------------------------------------------------------------------------
+SECTION 1 - REVENUE METRICS
+--------------------------------------------------------------------------------
+
+- Total All-Time Revenue earned from all customers since the start is 35,834,169 dollars
+- Current Monthly Recurring Revenue (MRR) meaning how much money comes in every month is 1,160,806 dollars
+- Annual Recurring Revenue (ARR) meaning the yearly revenue estimate based on current MRR is 13,929,672 dollars
+- Average Revenue Per Account meaning how much each customer brings in on average is 7,167 dollars
+- Revenue has grown by 13.26 percent over the last 6 months which shows strong and consistent growth
+- The monthly revenue trend from 2020 to 2024 shows a very clean and steady upward line with almost no sudden drops
+- Revenue started near zero in early 2020 and has reached over 1.1 million dollars per month by late 2024
+
+--------------------------------------------------------------------------------
+SECTION 2 - CUSTOMER METRICS
+--------------------------------------------------------------------------------
+
+- Total number of customers in the dataset is 5,000
+- Active customers who are currently using the product is 4,344 which is 86.88 percent of total
+- Churned customers meaning customers who left the product is 656 which is 13.12 percent of total
+- Overall churn rate is 13.12 percent which means roughly 1 in every 8 customers eventually leaves
+- Average customer lifetime meaning how long a customer stays before leaving is 26.9 months which is about 2.25 years
+- Customers who are still active have an average lifetime of around 45 months shown in the box plot
+- Customers who churned had an average lifetime of only about 12 to 13 months showing early dropout
+
+CUSTOMER DISTRIBUTION BY SEGMENT
+
+- Small Business segment has the most customers at 1,993 which is 39.9 percent of total
+- Mid-Market segment has 1,258 customers which is 25.2 percent of total
+- Startup segment has 1,236 customers which is 24.7 percent of total
+- Enterprise segment has the fewest customers at 513 which is only 10.3 percent of total
+
+CHURN RATE BY SEGMENT
+
+- Mid-Market has the highest churn rate at 13.7 percent
+- Enterprise has a churn rate of 13.3 percent
+- Startup has a churn rate of 13.2 percent
+- Small Business has the lowest churn rate at 12.7 percent
+- The overall average churn rate across all segments is 13.2 percent
+- Churn rates are very similar across all segments meaning no single segment is much better or worse at retaining customers
+
+CHURN BY INDUSTRY
+
+- Finance industry has the highest churn rate at 14.0 percent
+- Technology comes second at 13.6 percent
+- Healthcare is at 13.5 percent
+- Education has one of the lower churn rates at 12.1 percent
+- The Other category has the lowest churn rate at 9.6 percent
+
+CHURN BY CONTRACT LENGTH
+
+- Customers on very short contracts have the highest churn at around 13.9 percent
+- As contract length increases churn drops significantly
+- Customers on 25-month contracts have the lowest churn at 11.9 percent
+- Customers on 36-month contracts have a churn rate of 12.5 percent
+- Key Insight - Longer contracts lead to better customer retention
+
+USAGE SCORE OBSERVATION
+
+- Active customers have an average usage score of 66.0
+- Churned customers have a lower average usage score of 54.7
+- This clearly shows that customers who use the product more tend to stay longer
+- Key Insight - Low usage is a warning sign that a customer might leave soon
+
+--------------------------------------------------------------------------------
+SECTION 3 - CUSTOMER VALUE METRICS
+--------------------------------------------------------------------------------
+
+- Average Customer Lifetime Value (CLV) is 7,167 dollars meaning that is the average total money a customer brings in
+- Median CLV is 2,907 dollars which is much lower than the mean showing that a few high-value customers pull the average up
+- CLV to Customer Acquisition Cost (CAC) Ratio is 14.33 times assuming a CAC of 500 dollars
+- A CLV to CAC ratio above 3 is generally considered very healthy so 14.33 is an excellent result
+- Average Payback Period meaning how long it takes to recover the cost of acquiring a customer is only 5.0 months
+- A short payback period of 5 months means the business recovers its investment quickly
+
+CLV BY SEGMENT
+
+- Mid-Market customers have the highest average CLV at 7,478 dollars
+- Small Business customers have average CLV of 7,099 dollars
+- Startup customers have average CLV of 7,025 dollars
+- Enterprise customers have the lowest average CLV at 7,011 dollars
+- Key Insight - CLV is fairly similar across all segments with Mid-Market slightly ahead
+
+CLV TREND BY COHORT YEAR
+
+- Customers who joined in 2020 have the highest CLV at around 11,900 dollars because they have been with the company the longest
+- CLV drops for later cohorts simply because newer customers have had less time to generate revenue
+- This is normal and expected in subscription businesses
+
+--------------------------------------------------------------------------------
+SECTION 4 - REVENUE FORECASTING
+--------------------------------------------------------------------------------
+
+- Two forecasting models were used to predict future revenue - ARIMA and Facebook Prophet
+- Both models agree closely on future revenue predictions showing the forecast is reliable
+- Forecasted Revenue for the next 12 months is 15,710,149 dollars
+- Expected average monthly revenue over the next 12 months is 1,309,179 dollars
+- Current MRR is 1,160,806 dollars so this represents a further increase in monthly revenue
+- Model Accuracy measured by MAPE (Mean Absolute Percentage Error) is only 0.73 percent
+- A MAPE below 5 percent is considered excellent so 0.73 percent shows very high forecasting accuracy
+- ARIMA model shows the 12-month forecast reaching up to about 1.4 million dollars per month
+- The 95 percent confidence interval on the ARIMA forecast is very narrow meaning high confidence in the numbers
+- Prophet model also confirms the same linear upward trend with very tight prediction bands
+
+TIME SERIES DECOMPOSITION FINDINGS
+
+- The revenue series has a very strong upward trend component confirming consistent business growth
+- There is a seasonal component present with fluctuations of roughly plus or minus 50,000 to 100,000 dollars
+- Seasonal dips are seen around April and May each year based on the yearly component chart
+- Seasonal peaks appear around March and November each year
+- The residual component is small and random meaning the models capture most of the patterns well
+- ACF analysis of the original series shows strong autocorrelation confirming the trend
+- After differencing the series becomes stationary which validates using ARIMA for forecasting
+
+--------------------------------------------------------------------------------
+SECTION 5 - CHURN PREDICTION MODEL PERFORMANCE
+--------------------------------------------------------------------------------
+
+- Three machine learning models were trained to predict which customers will churn
+- Models trained - Logistic Regression, Random Forest, and Gradient Boosting
+
+MODEL ACCURACY RESULTS
+
+- Logistic Regression achieved ROC AUC score of 0.995 which is near perfect
+- Random Forest achieved ROC AUC score of 1.000 meaning perfect prediction on test data
+- Gradient Boosting also achieved ROC AUC score of 1.000
+- All three models achieved near perfect scores on Accuracy, Precision, Recall, and F1
+
+CONFUSION MATRIX - RANDOM FOREST
+
+- Out of 869 active customers in the test set the model correctly identified all 869 as active
+- Out of 131 churned customers the model correctly identified all 131 as churned
+- Zero false positives and zero false negatives meaning the model made no mistakes on test data
+- Key Insight - The model can reliably predict in advance which customers are about to leave
+
+TOP FEATURES FOR CHURN PREDICTION
+
+- Recency Days meaning how many days since a customer last had activity is the most important feature with an importance score of about 0.51
+- This is the single most powerful predictor of churn by far
+- Lifetime Months meaning how long the customer has been with the company is the second most important at about 0.17
+- Transaction Count meaning how many purchases the customer has made is third at about 0.12
+- Customer Age in Days is fourth at about 0.12
+- Tickets Per Month and Usage Score are smaller but still meaningful features
+- Key Insight - If a customer has not been active recently they are very likely to churn soon
+
+--------------------------------------------------------------------------------
+SECTION 6 - RISK STRATIFICATION
+--------------------------------------------------------------------------------
+
+- The churn model was used to assign each customer a churn probability score
+- Customers were then grouped into risk categories based on these scores
+
+RISK CATEGORY BREAKDOWN
+
+- Low Risk customers meaning churn probability below 50 percent - 2,663 customers which is 80.2 percent of total
+- Very High Risk customers meaning churn probability above 50 percent - 650 customers which is 19.6 percent of total
+- Medium Risk customers - only 4 customers which is 0.1 percent
+- High Risk customers - only 2 customers which is 0.1 percent
+
+FINANCIAL RISK FROM AT-RISK CUSTOMERS
+
+- At-Risk customers are defined as those with more than 50 percent churn probability - total of 652 customers
+- The MRR tied to at-risk customers is 166,748 dollars per month
+- If all at-risk customers were to leave the potential annual revenue loss would be 2,000,976 dollars
+- The Low Risk group holds 740,587 dollars in MRR which is the safe and stable revenue base
+- Key Insight - Retaining even half of the at-risk customers would save approximately 1 million dollars per year
+
+--------------------------------------------------------------------------------
+SECTION 7 - COHORT RETENTION ANALYSIS
+--------------------------------------------------------------------------------
+
+- Cohort analysis tracks how groups of customers who joined in the same month behave over time
+
+RETENTION RATE FINDINGS
+
+- In the first month after joining nearly all cohorts retain 100 percent of their customers
+- Retention starts dropping gradually from month 4 or 5 onwards
+- By month 12 most cohorts still retain around 91 to 96 percent of their original customers
+- The 2020-01 cohort which is the oldest has maintained around 80 to 82 percent retention even after 50 plus months
+- More recent cohorts like 2021-07 and 2022-01 show higher retention curves in their early months
+- Key Insight - The product has strong early retention and most customer loss happens gradually over many months rather than in sudden drops
+
+REVENUE PER CUSTOMER OVER TIME
+
+- Average revenue per customer starts at around 290 dollars in the first month
+- It stabilizes at around 265 to 270 dollars from month 2 onwards
+- Revenue per customer stays very consistent even after 50 or more months showing high product stickiness
+- Monthly cohort sizes (new customers per month) are relatively stable at around 75 to 95 new customers per month
+
+--------------------------------------------------------------------------------
+SECTION 8 - RFM SEGMENTATION ANALYSIS
+--------------------------------------------------------------------------------
+
+- RFM stands for Recency (how recently they bought), Frequency (how often they buy), and Monetary (how much they spend)
+- All customers were segmented into 8 groups based on their RFM scores
+
+CUSTOMER COUNTS BY RFM SEGMENT
+
+- At Risk segment - 794 customers (18.3 percent) - largest group and most concerning
+- Loyal Customers - 747 customers (17.2 percent) - very valuable group
+- New Customers - 685 customers (15.8 percent)
+- Promising - 609 customers (14.0 percent)
+- Lost customers - 462 customers (10.6 percent)
+- Champions - 439 customers (10.1 percent) - best customers
+- Need Attention - 368 customers (8.5 percent)
+- Hibernating High Value - 240 customers (5.5 percent)
+
+REVENUE BY RFM SEGMENT
+
+- At Risk segment generates the most total revenue at 10,534,727 dollars
+- Loyal Customers generate 8,489,018 dollars
+- Champions generate 8,171,065 dollars
+- Key Insight - A large portion of revenue is coming from customers who are already at risk of leaving
+
+AVERAGE CLV BY SEGMENT
+
+- Champions have the highest average CLV at 18,613 dollars
+- At Risk customers have an average CLV of 13,268 dollars which is why retaining them is critical
+- Loyal Customers have average CLV of 11,364 dollars
+- Hibernating High Value customers have average CLV of 6,760 dollars
+- Lost customers have the lowest average CLV at only 866 dollars
+
+--------------------------------------------------------------------------------
+SECTION 9 - PROFITABILITY AND SEGMENTATION DASHBOARD
+--------------------------------------------------------------------------------
+
+TOTAL REVENUE BY SEGMENT
+
+- Small Business is the top revenue generating segment at 14,148,291 dollars which is 39.5 percent of gross profit
+- Mid-Market contributes 9,406,870 dollars which is 26.3 percent of gross profit
+- Startup contributes 8,682,557 dollars which is 24.2 percent of gross profit
+- Enterprise contributes the least at 3,596,452 dollars which is only 10.0 percent of gross profit
+- Key Insight - Despite having only the most customers the Small Business segment is by far the biggest revenue driver
+
+REVENUE SHARE BY PLAN TYPE
+
+- Business plan accounts for 38.1 percent of total revenue
+- Enterprise plan accounts for 38.3 percent of total revenue
+- Professional plan accounts for 16.8 percent of total revenue
+- Basic plan accounts for only 6.7 percent of total revenue
+- Combined the Business and Enterprise plans bring in 76.4 percent of all revenue
+
+CUSTOMER COUNT BY PLAN TYPE
+
+- Basic plan has the most customers at 1,785
+- Professional plan has 1,444 customers
+- Business plan has 1,240 customers
+- Enterprise plan has the fewest customers at 531
+- Key Insight - Most customers are on Basic plans but most revenue comes from Business and Enterprise plans
+
+REVENUE BY GEOGRAPHY
+
+- USA is by far the largest market generating close to 1.5 million dollars in revenue
+- UK is second followed by Canada, Other, Germany, France, and Australia
+- Revenue drops sharply after USA indicating heavy dependence on a single geography
+
+ML CLUSTER ANALYSIS
+
+- K-Means clustering identified 5 distinct customer groups
+- Cluster C0 Premium At-Risk has the highest average MRR at 999 dollars per customer
+- Cluster C3 High Support Need has an average MRR of 189 dollars
+- Cluster C2 Standard has average MRR of 185 dollars
+- Clusters C4 and C1 Standard have average MRR around 173 to 178 dollars
+- Key Insight - The Premium At-Risk cluster is the most valuable per customer but also the most risky to lose
+
+--------------------------------------------------------------------------------
+SECTION 10 - KEY TAKEAWAYS AND RECOMMENDATIONS
+--------------------------------------------------------------------------------
+
+WHAT IS GOING WELL
+
+- Revenue growth is very strong and consistent from 2020 to 2024 with no major dips
+- Churn prediction models are extremely accurate with near perfect scores
+- Customer retention rates are high especially in early months after joining
+- CLV to CAC ratio of 14.33 is excellent meaning customers bring in far more than they cost to acquire
+- Payback period of only 5 months means the business recovers acquisition costs quickly
+- Revenue forecasting is highly accurate at 0.73 percent error showing the business is predictable
+
+AREAS THAT NEED ATTENTION
+
+- 652 customers are at very high risk of churning representing 166,748 dollars in monthly revenue at risk
+- The At Risk RFM segment is the largest segment at 794 customers and also generates the most revenue
+- Finance and Technology industries have the highest churn rates and should be targeted for retention efforts
+- Over 18 percent of all customers fall in the At Risk RFM category which is very high
+- The Enterprise segment despite being the premium tier generates the lowest total revenue due to small customer count
+- USA dependence in geography means the business is not well diversified geographically
+
+ACTIONABLE STEPS
+
+- Use the churn prediction model in production to flag at-risk customers before they leave
+- Focus retention campaigns on the At Risk RFM segment especially high CLV customers
+- Offer longer contracts with discounts to reduce churn since data shows longer contracts have lower churn
+- Monitor usage scores closely since low usage is a strong predictor of upcoming churn
+- Target Finance and Technology industry customers with dedicated customer success efforts
+- Consider expanding marketing efforts outside USA to reduce geographical concentration risk
+
+================================================================================
+END OF KPI SUMMARY REPORT
+================================================================================
